@@ -1,11 +1,8 @@
 <template>
   <div class="home">
-    <h1>
-     SSanta Generator
-     <small class="text-muted">S is for Secret ;)</small>
-     </h1>
-     
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    
+
+    <HelloWorld msg="Welcome"/>
   </div>
 </template>
 
