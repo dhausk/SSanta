@@ -1,6 +1,10 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
+    <h1>
+     SSanta Generator
+     <small class="text-muted">S is for Secret ;)</small>
+     </h1>
+     
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
