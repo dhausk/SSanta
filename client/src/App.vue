@@ -16,7 +16,12 @@
         <div class="collapse navbar-collapse" id="navbarColor01">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <router-link to="/">Home <span class="sr-only nav-link">(current)</span></router-link>
+              <!-- <router-link to="/">Home <span class="sr-only nav-link">(current)</span></router-link> -->
+              <router-link to="/" class="nav-link">Home</router-link>
+      
+            </li>
+             <li class="nav-item">
+              <router-link to="/SSForm" class="nav-link">SSGenerator</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/about" class="nav-link">About</router-link>
