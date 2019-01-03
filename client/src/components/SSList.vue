@@ -21,7 +21,7 @@
 <script>
 
 export default {
-  name: 'SSForm'
+  name: 'SSList'
 };
 </script>
 
