@@ -2,7 +2,7 @@
   <div class="Home">
     <div class="jumbotron">
     <h1 class="display-3">Hello! Welcome!</h1>
-    <p class="lead">to the simple gift exchange generator</p>
+    <p class="lead">To the simple gift exchange generator</p>
       <hr class="my-4">
         <p>
           We do not sell or give away your email adresses or names, we just assign a person to eachother 
