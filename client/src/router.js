@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import SSForm from './views/SSForm.vue';
+import EmailSignUp from './components/EmailSignUp.vue';
+import SSList from './components/SSList.vue';
 
 Vue.use(Router);
 
@@ -24,6 +26,16 @@ export default new Router({
       path: '/SSForm',
       name: 'SSForm',
       component: SSForm,
+    },
+    {
+      path: '/EmailSignUp',
+      name: 'EmailSignUp',
+      component: EmailSignUp,
+    },
+    {
+      path: '/SSList',
+      name: 'SSList',
+      component: SSList,
     },
   ],
 });
