@@ -28,12 +28,12 @@ export default new Router({
       component: SSForm,
     },
     {
-      path: '/EmailSignUp',
+      path: '/SSForm/EmailSignUp',
       name: 'EmailSignUp',
       component: EmailSignUp,
     },
     {
-      path: '/SSList',
+      path: '/SSFrom/SSList',
       name: 'SSList',
       component: SSList,
     },
