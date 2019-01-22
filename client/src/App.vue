@@ -3,11 +3,11 @@
     <div id="nav">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <router-link class="navbar-brand" to="/">
-        
-            SSanta Generator
+           SSanta Generator
            S is for Secret ;)
         </router-link>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" 
+        data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse collapse show" id="navbarColor01">
@@ -16,7 +16,7 @@
               <router-link to="/" class="nav-link ">Home</router-link>
             </li>
              <li class="nav-item">
-              <router-link to="/SSForm" class="nav-link">SSGenerator</router-link>
+              <router-link to="/SSForm/EmailSignUp" class="nav-link">SSGenerator</router-link>
             </li>
             <li class="nav-item">
               <router-link to="/about" class="nav-link">About</router-link>
