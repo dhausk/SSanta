@@ -26,16 +26,18 @@ export default new Router({
       path: '/SSForm',
       name: 'SSForm',
       component: SSForm,
-    },
-    {
-      path: '/SSForm/EmailSignUp',
-      name: 'EmailSignUp',
-      component: EmailSignUp,
-    },
-    {
-      path: '/SSFrom/SSList',
-      name: 'SSList',
-      component: SSList,
+      children: [
+        {
+          path: 'EmailSignUp',
+          name: 'EmailSignUp',
+          component: EmailSignUp,
+        },
+        {
+          path: 'SSList',
+          name: 'SSList',
+          component: SSList,
+        },
+      ],
     },
   ],
 });
