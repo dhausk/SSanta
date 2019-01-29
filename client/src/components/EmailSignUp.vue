@@ -22,7 +22,7 @@
         <div class="form-group">
           <label for="number of people">Number of people</label>
           <input type="number" class="form-control" id="number of people" min="3" max="300" placeholder="Number of people">
-          <small id="emailHelp" class="form-text text-muted">Gotta have three or more people to play SSanta.</small>
+          <small id="emailHelp" class="form-text text-muted">You need to have three or more people to play SSanta.</small>
         </div>
         <fieldset class="form-group">
           <div class="form-check">
@@ -36,7 +36,7 @@
       </fieldset>
     </form>
   </div>
-    
+
 
 </template>
 <script>
