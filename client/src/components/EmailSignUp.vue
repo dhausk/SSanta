@@ -32,7 +32,10 @@
             </label>
           </div>
         </fieldset>
-        <button type="submit" class="btn btn-primary">Next Step</button>
+        <router-link to="SSList" class="nav-link">
+          <button type="submit" class="btn btn-primary">Next Step</button>
+        </router-link>
+        
       </fieldset>
     </form>
   </div>

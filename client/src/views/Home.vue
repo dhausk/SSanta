@@ -10,7 +10,9 @@
           organizing a list of who everyone has, in case someone forgets or looses their email.
         </p>
         <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button">Lets get started!</a>
+          <router-link to="/SSForm/EmailSignUp" class="nav-link">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Lets get started!</a>
+          </router-link>
         </p>
     </div>
   </div>
@@ -20,6 +22,6 @@
 // @ is an alias to /src
 
 export default {
-  name: 'Home'
+    name: 'Home',
   };
 </script>
