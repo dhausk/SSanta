@@ -16,21 +16,27 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="exampleInputEmail1">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-					placeholder="Enter email">
-					<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+
+
+					<label for="name1">Name</label>
+					<input type="text" class="form-control" id="name1" placeholder="Name">
+           <label for="email1">Email address</label>
+          <input type="email" class="form-control" id="email1" placeholder="Their email">
+          <label for="name2">Name</label>
+					<input type="text" class="form-control" id="name2" placeholder="Name">
+           <label for="email2">Email address</label>
+          <input type="email" class="form-control" id="email2" placeholder="Their Email">
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+          
+				<button type="button" class="btn btn-primary" >Add another person</button>
+
+        <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
 			</fieldset>
 		</form>
 	</div>
 </template>
 <script>
-
-export default {
-  name: 'SSList',
-};
+export default { name: 'SSList'};
 </script>
 
 <style scoped>
