@@ -22,7 +22,7 @@
           <input type="email" v-model="setEmail" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
           <small id="emailHelp" class="form-text text-muted">We never share your email with anyone outside your group.</small>
       
-          <label for="number of people">Number of people</label>
+          <label for="number of people">Number of people in your group, including yourself</label>
           <input type="number" v-model="setGroup" class="form-control" id="number of people" min="3" max="300" placeholder="Number of people" aria-describedby="numberHelp" required>
           <small id="numberHelp" class="form-text text-muted">You need to have three or more people to play SSanta.</small>
           
