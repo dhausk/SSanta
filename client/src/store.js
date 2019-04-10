@@ -8,7 +8,7 @@ export default new Vuex.Store({
   state: {
     creatorName: '',
     creatorEmail: '',
-    groupSize: 0,
+    groupSize: 3,
     showData: false,
     group: [],
   },
