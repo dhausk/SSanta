@@ -25,7 +25,30 @@ export default new Vuex.Store({
     setShowData(state, value) {
       state.showData = value;
     },
+    pushCreatorToGroup(state) {
+      state.group.push({
+        name: state.creatorName,
+        email: state.creatorEmail,
+      });
+    },
+    clearGroupArray(state) {
+      state.group = [];
+    },
+    createEmptyGroup(state) {
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < state.groupSize - 1; i++) {
+        state.group.push({
+          name: '',
+          email: '',
+        });
+      }
+    },
   },
   actions: {
+    createSSGroup(context) {
+      context.commit('clearGroupArray');
+      context.commit('pushCreatorToGroup');
+      context.commit('createEmptyGroup');
+    },
   },
 });

@@ -5,7 +5,7 @@
         aria-valuemax="100">
     	</div>
   	</div>
-    <form @submit.prevent="">
+    <form @submit.prevent="createSSGroup">
       <fieldset>
         <legend>Start by filling out your email and name </legend>
         <div class="form-group row">
@@ -46,7 +46,7 @@
 
 </template>
 <script>
-import {mapMutations} from 'vuex';
+import {mapMutations, mapActions} from 'vuex';
 export default {
   computed:{
     setName: {
@@ -80,7 +80,8 @@ export default {
       set(value){
         this.$store.commit('setShowData', value);
       }
-    }
+    },
+    ...mapActions(['createSSGroup'])
   },
 
   name: 'EmailSignUp',

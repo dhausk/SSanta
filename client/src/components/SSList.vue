@@ -16,17 +16,16 @@
 					</div>
 				</div>
 				<div class="form-group">
-					<label for="name1">Name</label>
-					<input type="text" class="form-control" id="name1" placeholder="Name">
-           <label for="email1">Email address</label>
-          <input type="email" class="form-control" id="email1" placeholder="Their email">
-          <div v-for="n in listNumber" :key="n">
 
-            <label for="name">Name</label>
+          <div v-for=" gr in group" v-bind:key="gr">
+            <p>{{gr.name}}</p>
+            <p>turds</p>
+<!--           
+          <label for="name">Name</label>
 					<input type="text" class="form-control" :id="n" :placeholder="n">
-           <label for="email1">Email address</label>
-          <input type="email" class="form-control" id="email1" placeholder="Their email">
-            
+          <label for="email1">Email address</label>
+          <input type="email" class="form-control" id="email1" placeholder="Their email"> -->
+
           </div>
 
 				</div>
@@ -43,9 +42,7 @@
 export default {
   name: 'SSList',
   computed: {
-    listNumber () {
-      return this.$store.state.groupSize -1
-    }
+    ...mapState(['group', 'groupSize']),
   }
 };
 
