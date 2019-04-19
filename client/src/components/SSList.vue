@@ -17,14 +17,17 @@
 				</div>
 				<div class="form-group">
 
-          <div v-for=" gr in group" v-bind:key="gr">
-            <p>{{gr.name}}</p>
-            <p>turds</p>
-<!--           
+          <div v-for="(item, index) in group" 
+          v-bind:key="item.id"
+          v-bind:index="index"
+          v-bind:item="item"
+          v-bind:group="group" >
+            <p>person {{item.id}}</p>
+          
           <label for="name">Name</label>
-					<input type="text" class="form-control" :id="n" :placeholder="n">
+					<input type="text" class="form-control" placeholder="n">
           <label for="email1">Email address</label>
-          <input type="email" class="form-control" id="email1" placeholder="Their email"> -->
+          <input type="email" class="form-control" id="email1" placeholder="Their email">
 
           </div>
 
@@ -38,11 +41,11 @@
 	</div>
 </template>
 <script>
-  import {mapState} from 'vuex';
+import {mapState} from 'vuex';
 export default {
   name: 'SSList',
   computed: {
-    ...mapState(['group', 'groupSize']),
+    ...mapState(['group', 'groupSize'])
   }
 };
 
