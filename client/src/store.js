@@ -27,6 +27,7 @@ export default new Vuex.Store({
     },
     pushCreatorToGroup(state) {
       state.group.push({
+        id: 0,
         name: state.creatorName,
         email: state.creatorEmail,
       });
@@ -38,10 +39,27 @@ export default new Vuex.Store({
       // eslint-disable-next-line no-plusplus
       for (let i = 0; i < state.groupSize - 1; i++) {
         state.group.push({
+          id: i + 1,
           name: '',
           email: '',
         });
       }
+    },
+    addGroupMember(state) {
+      state.group.push({
+        id: state.group.length + 1,
+        name: '',
+        email: '',
+      });
+    },
+    deleteGroupMember(state) {
+      state.group.pop();
+    },
+    subtractFromGroupSize(state) {
+      state.groupSize -= 1;
+    },
+    addToGroupSize(state) {
+      state.groupSize += 1;
     },
   },
   actions: {
@@ -49,6 +67,14 @@ export default new Vuex.Store({
       context.commit('clearGroupArray');
       context.commit('pushCreatorToGroup');
       context.commit('createEmptyGroup');
+    },
+    addToGroup(context) {
+      context.commit('addGroupMember');
+      context.commit('addToGroupSize');
+    },
+    removeFromGroup(context) {
+      context.commit('deleteGroupMember');
+      context.commit('subtractFromGroupSize');
     },
   },
 });
