@@ -25,7 +25,7 @@
             <p>person {{item.id}}</p>
           
           <label for="name">Name</label>
-					<input type="text" class="form-control" placeholder="n">
+					<input type="text" class="form-control" id="name" v-model="PersonName" placeholder="name">
           <label for="email1">Email address</label>
           <input type="email" class="form-control" id="email1" placeholder="Their email">
 
@@ -45,7 +45,23 @@ import {mapState} from 'vuex';
 export default {
   name: 'SSList',
   computed: {
-    ...mapState(['group', 'groupSize'])
+    ...mapState(['group', 'groupSize']),
+    personName: {
+      get() {
+        return this.$store.state.group[1];
+      },
+      set(value){
+        this.$store.commit('setNewName', value);
+      }
+    },
+    setEmail: {
+      get() {
+        return this.$store.state.creatorEmail;
+      },
+      set(value){
+        this.$store.commit('setNewEmail', value);
+      },
+    },
   }
 };
 

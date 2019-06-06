@@ -2,8 +2,8 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 import SSForm from './views/SSForm.vue';
-import EmailSignUp from './components/EmailSignUp.vue';
-import SSList from './components/SSList.vue';
+import EmailSignUp from './views/EmailSignUp.vue';
+import SSList from './views/SSList.vue';
 
 Vue.use(Router);
 
