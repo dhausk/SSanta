@@ -16,7 +16,6 @@
 					</div>
 				</div>
 				<div class="form-group">
-
           <div v-for="(item, index) in group" 
           v-bind:key="item.id"
           v-bind:index="index"
@@ -25,9 +24,9 @@
             <p>person {{item.id}}</p>
           
           <label for="name">Name</label>
-					<input type="text" class="form-control" id="name" v-model="PersonName" placeholder="name">
+					<input type="text" class="form-control" :id=index v-model="PersonName" placeholder="name">
           <label for="email1">Email address</label>
-          <input type="email" class="form-control" id="email1" placeholder="Their email">
+          <input type="email" class="form-control" :id=index placeholder="Their email">
 
           </div>
 
@@ -48,7 +47,7 @@ export default {
     ...mapState(['group', 'groupSize']),
     personName: {
       get() {
-        return this.$store.state.group[1];
+        return this.$store.state.group;
       },
       set(value){
         this.$store.commit('setNewName', value);
