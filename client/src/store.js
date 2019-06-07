@@ -13,24 +13,11 @@ export default new Vuex.Store({
     group: [],
   },
   mutations: {
-    setNewName(state, value) {
-      state.creatorName = value;
-    },
-    setNewEmail(state, value) {
-      state.creatorEmail = value;
-    },
     setGroupSize(state, value) {
       state.groupSize = value;
     },
     setShowData(state, value) {
       state.showData = value;
-    },
-    pushCreatorToGroup(state) {
-      state.group.push({
-        id: 0,
-        name: state.creatorName,
-        email: state.creatorEmail,
-      });
     },
     clearGroupArray(state) {
       state.group = [];
@@ -65,7 +52,6 @@ export default new Vuex.Store({
   actions: {
     createSSGroup(context) {
       context.commit('clearGroupArray');
-      context.commit('pushCreatorToGroup');
       context.commit('createEmptyGroup');
     },
     addToGroup(context) {
