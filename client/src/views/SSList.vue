@@ -21,19 +21,13 @@
           v-bind:index="index"
           v-bind:item="item"
           v-bind:group="group" >
-            <p>person {{item.id}}</p>
-          
-          <label for="name">Name</label>
-					<input type="text" class="form-control" :id=index v-model="PersonName" placeholder="name">
-          <label for="email1">Email address</label>
-          <input type="email" class="form-control" :id=index placeholder="Their email">
-
+            <label for="name">Person {{item.id}}</label>
+					  <input type="text" class="form-control" :id=index v-model="PersonName" placeholder="name">
+            <label for="email1">Email address for person {{item.id}}</label>
+            <input type="email" class="form-control" :id=index placeholder="Their email">
           </div>
-
 				</div>
-          
 				<button type="button" class="btn btn-primary" >Add another person</button>
-
         <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
 			</fieldset>
 		</form>
