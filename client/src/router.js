@@ -4,6 +4,7 @@ import Home from './views/Home.vue';
 import SSForm from './views/SSForm.vue';
 import EmailSignUp from './views/EmailSignUp.vue';
 import SSList from './views/SSList.vue';
+import Confirm from './views/Confirm.vue';
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
           path: 'SSList',
           name: 'SSList',
           component: SSList,
+        },
+        {
+          path: 'Confirm',
+          name: 'Confirm',
+          component: Confirm,
         },
       ],
     },
