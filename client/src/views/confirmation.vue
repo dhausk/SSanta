@@ -6,12 +6,13 @@
       <!-- <router-link to ="confirm" class="nav-link">Confirmation</router-link> -->
     </nav>
       <router-view></router-view>
+      <h1>Confirmation page</h1>
   </div>
 </template>
 <script>
 
 export default {
-  name: 'SSForm',
+  name: 'confirmation',
 };
 </script>
 
