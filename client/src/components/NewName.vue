@@ -1,7 +1,6 @@
 <template>
   <div class="peepName">
-    <h1>Hi Name here</h1>
-    <label for="name">Person {{item}}</label>
+    <label for="name">Person {{item}}'s name.</label>
     <input type="text" class="form-control" :id=index v-model="PersonName" placeholder="name">
   </div>
 </template>
@@ -9,7 +8,7 @@
 <script>
 export default {
   name: 'NewName',
-  props: ['item', 'index'], 
+  props: ['item', 'index'],
   computed: {
     personName: {
       get() {

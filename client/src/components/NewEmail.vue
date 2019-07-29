@@ -1,6 +1,5 @@
 <template>
   <div class="peepEmail">
-    <h3>Dope</h3>
     <label for="email1">Email address for person {{item}}</label>
     <input type="email" class="form-control" :id=index placeholder="Their email">
   </div>

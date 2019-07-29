@@ -20,10 +20,9 @@
           v-bind:key="item.id"
           v-bind:index="index"
           v-bind:item="item"
-          v-bind:group="group" >
+          v-bind:group="group">
             <NewName v-bind:item="item.id" v-bind:index="index"></NewName>
             <NewEmail v-bind:item="item.id" v-bind:index="index"></NewEmail>
-            <h2>Hello</h2>
           </div>
         </div>
         <button type="button" class="btn btn-primary" >Add another person</button>
