@@ -24,7 +24,7 @@ export default new Vuex.Store({
     },
     createEmptyGroup(state) {
       // eslint-disable-next-line no-plusplus
-      for (let i = 0; i < state.groupSize - 1; i++) {
+      for (let i = 0; i < state.groupSize; i++) {
         state.group.push({
           id: i + 1,
           name: '',
