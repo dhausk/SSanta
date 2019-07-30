@@ -13,24 +13,9 @@
     <form @submit.prevent="createSSGroup">
       <fieldset>
         <legend>
-          Start by filling out how many people in your group and if you want the results hidden.
+          Start by saying if you would like the results hidden or shown to the administraitor.
         </legend>
         <div class="form-group">
-          <label for="number of people">
-            Number of people in your group, including yourself
-          </label>
-          <input
-          type="number"
-          v-model="setGroup"
-          class="form-control"
-          id="number of people"
-          min="3" max="300"
-          placeholder="Number of people"
-          aria-describedby="numberHelp"
-          required>
-          <small id="numberHelp" class="form-text text-muted">
-            You need to have three or more people to play SSanta.
-          </small>
           <div class="form-check">
             <label class="form-check-label">
               <input
