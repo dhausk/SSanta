@@ -5,7 +5,7 @@
         aria-valuemax="100">
       </div>
     </div>
-    <form>
+    <form >
       <fieldset>
         <legend>Legend</legend>
         <div class="form-group row">
@@ -21,8 +21,10 @@
           v-bind:index="index"
           v-bind:item="item"
           v-bind:group="group">
-            <NewName v-bind:item="item.id" v-bind:index="index"></NewName>
-            <NewEmail v-bind:item="item.id" v-bind:index="index"></NewEmail>
+            <label for="name">Person {{item.id}}'s name.</label>
+            <input type="text" class="form-control" :id=index  placeholder="Name"> 
+            <label for="email1">Email address for person {{item.id}}</label>
+            <input type="email" class="form-control" :id=index placeholder="Email address">
           </div>
         </div>
         <button type="button" class="btn btn-primary" >Add another person</button>
@@ -34,35 +36,13 @@
 <script>
 import { mapState } from 'vuex';
 
-import NewName from '../Components/NewName.vue';
 
-import NewEmail from '../Components/NewEmail.vue';
 
 export default {
   name: 'SSList',
-  components: {
-    NewName,
-    NewEmail,
-  },
   computed: {
-    ...mapState(['group', 'groupSize']),
-    // personName: {
-    //   get() {
-    //     return this.$store.state.group;
-    //   },
-    //   set(value){
-    //     this.$store.commit('setNewName', value);
-    //   }
-    // },
-    // setEmail: {
-    //   get() {
-    //     return this.$store.state.creatorEmail;
-    //   },
-    //   set(value){
-    //     this.$store.commit('setNewEmail', value);
-    //   },
-    // },
-  },
+    ...mapState(['group']),
+  }
 };
 
 </script>
