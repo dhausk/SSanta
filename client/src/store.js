@@ -6,8 +6,6 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    creatorName: '',
-    creatorEmail: '',
     groupSize: 3,
     showData: false,
     group: [],
@@ -32,6 +30,7 @@ export default new Vuex.Store({
         });
       }
     },
+    // add one group member obj
     addGroupMember(state) {
       state.group.push({
         id: state.group.length + 1,
@@ -39,6 +38,7 @@ export default new Vuex.Store({
         email: '',
       });
     },
+    // remove one group mem obj
     deleteGroupMember(state) {
       state.group.pop();
     },
@@ -47,6 +47,9 @@ export default new Vuex.Store({
     },
     addToGroupSize(state) {
       state.groupSize += 1;
+    },
+    setNewName(state, payload) {
+      state.group[0] = payload;
     },
   },
   actions: {
