@@ -1,5 +1,5 @@
 <template >
-  <div>
+  <div class="container">
     <nav class="form-nav" >
       <router-link to="EmailSignUp" class="nav-link">Sign Up</router-link>
       <router-link to="SSList" class="nav-link">Create group</router-link>
