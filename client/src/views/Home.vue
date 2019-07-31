@@ -11,7 +11,7 @@
         </p>
         <p class="lead">
           <router-link to="/SSForm/EmailSignUp" class="nav-link">
-            <a class="btn btn-primary btn-lg" role="button">Lets get started!</a>
+            <button class="btn btn-primary btn-lg btn-block" role="button">Lets get started!</button>
           </router-link>
         </p>
     </div>
@@ -19,8 +19,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
-
 export default {
   name: 'Home',
 };
