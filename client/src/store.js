@@ -14,16 +14,19 @@ export default new Vuex.Store({
         id: 1,
         name: '',
         email: '',
+        admin: false,
       },
       {
         id: 2,
         name: '',
         email: '',
+        admin: false,
       },
       {
         id: 3,
         name: '',
         email: '',
+        admin: false,
       },
     ],
   },
@@ -43,6 +46,7 @@ export default new Vuex.Store({
         id: state.peoples.length + 1,
         name: '',
         email: '',
+        admin: false,
       });
     },
     // remove one group mem obj

@@ -10,7 +10,7 @@
         aria-valuemax="100">
       </div>
     </div>
-    <form @submit.prevent="createSSGroup">
+    <form @submit.prevent="">
       <fieldset>
         <legend>
           Start by saying if you would like the results hidden or shown to the administraitor.
