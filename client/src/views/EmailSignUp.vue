@@ -13,10 +13,10 @@
     <form @submit.prevent="">
       <fieldset>
         <legend>
-          Start by saying if you would like the results hidden or shown to the administraitor.
+          Step one:
         </legend>
-        <div class="form-group">
-          <div class="form-check">
+        <div class="form-group card">
+          <div class="form-check ">
             <label class="form-check-label">
               Do you want to keep your results hidden?
             </label>

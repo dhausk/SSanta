@@ -12,25 +12,20 @@
       <section>
       <form v-on:submit.prevent="" form-inline>
         <fieldset>
-          <legend>Enter your Group memembers names and emails.</legend>
-          <div class="form-group row">
-            <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-            <div class="col-sm-10">
-              <input type="text" readonly="" class="form-control-plaintext" id="staticEmail"
-              value="email@example.com">
-            </div>
-          </div>
+          <legend>Step 2: Enter your Group memembers names and emails.</legend>
           <div class="form-group container">
-            <div v-for="people in peoples" v-bind:key="people.id" row m-3>
-              <div >
+            <div v-for="people in peoples" v-bind:key="people.id" class="row card">
+              <div class="card-body" >
                 <label for="name">Person {{people.id}}'s name.</label>
-                <input type="text" class="form-control" :id=people.id v-model="people.name" placeholder="Name">
+                <input type="text" class="form-control" :id=people.id
+                v-model="people.name" placeholder="Name">
               </div>
-              <div>
+              <div class="card-body">
                 <label for="email">Email address for person {{people.id}}</label>
-                <input type="email" class="form-control" :id=people.id v-model="people.email" placeholder="Email address">
+                <input type="email" class="form-control" :id=people.id
+                v-model="people.email" placeholder="Email address example - ' email@derp.com'">
               </div>
-              <div class="form-check">
+              <div class="form-check card-body">
                 <input
                   v-model="people.admin"
                   class="form-check-input"
@@ -42,8 +37,10 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary" v-on:click="addGroupMember">Add person</button> 
-          <button type="button" class="btn btn-primary" v-on:click="deleteGroupMember">delete last person</button>
+          <button type="button" class="btn btn-primary"
+          v-on:click="addGroupMember">Add person</button>
+          <button type="button" class="btn btn-primary"
+          v-on:click="deleteGroupMember">delete last person</button>
           <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
           </fieldset>
       </form>
