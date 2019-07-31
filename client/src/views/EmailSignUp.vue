@@ -16,16 +16,14 @@
           Step one:
         </legend>
         <div class="form-group card">
-          <div class="form-check ">
+          <div class="form-check card-body">
             <label class="form-check-label">
               Do you want to keep your results hidden?
             </label>
             <input
               v-model="setShowHide"
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              checked="">
+              class="form-check-input ml-2"
+              type="checkbox">
           </div>
         </div>
         <router-link to="SSList" class="nav-link">
