@@ -36,18 +36,9 @@
   </div>
 </template>
 <script>
-import { mapActions } from 'vuex';
 
 export default {
   computed: {
-    setGroup: {
-      get() {
-        return this.$store.state.groupSize;
-      },
-      set(value) {
-        this.$store.commit('setGroupSize', value);
-      },
-    },
     setShowHide: {
       get() {
         return this.$store.state.showData;
@@ -56,7 +47,6 @@ export default {
         this.$store.commit('setShowData', value);
       },
     },
-    ...mapActions(['createSSGroup']),
   },
   name: 'EmailSignUp',
 };
