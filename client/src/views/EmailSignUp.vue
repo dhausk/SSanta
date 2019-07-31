@@ -18,14 +18,14 @@
         <div class="form-group">
           <div class="form-check">
             <label class="form-check-label">
-              <input
+              Do you want to keep your results hidden?
+            </label>
+            <input
               v-model="setShowHide"
               class="form-check-input"
               type="checkbox"
               value=""
               checked="">
-              Do you want to keep your results hidden?
-            </label>
           </div>
         </div>
         <router-link to="SSList" class="nav-link">
