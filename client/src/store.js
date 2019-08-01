@@ -49,6 +49,12 @@ export default new Vuex.Store({
         admin: false,
       });
     },
+    addToGroupSize(state) {
+      state.groupSize += 1;
+    },
+    removeOneFromGroup(state) {
+      state.groupSize -= 1;
+    },
     // remove one group mem obj
     deleteGroupMember(state) {
       state.peoples.pop();
@@ -58,9 +64,11 @@ export default new Vuex.Store({
   actions: {
     addToGroup(context) {
       context.commit('addGroupMember');
+      context.commit('addToGroupSize');
     },
     removeFromGroup(context) {
       context.commit('deleteGroupMember');
+      context.commit('removeOneFromGroup');
     },
   },
 });
