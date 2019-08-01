@@ -26,8 +26,8 @@
               type="checkbox">
           </div>
         </div>
-        <router-link to="SSList" class="nav-link">
-          <button type="submit" class="btn btn-primary">Next Step</button>
+        <router-link to="SSList" class="nav-link d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-block">Next Step</button>
         </router-link>
       </fieldset>
     </form>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-4">
     <div class="progress">
       <div class="progress-bar"
         role="progressbar"
@@ -10,11 +10,11 @@
       </div>
     </div>
       <section>
-      <form v-on:submit.prevent="" form-inline>
+      <form @submit.prevent="" form-inline>
         <fieldset>
           <legend>Step 2: Enter your Group memembers names and emails.</legend>
-          <div class="form-group container">
-            <div v-for="people in peoples" v-bind:key="people.id" class="row card">
+          <div class="form-group container align-middle">
+            <div v-for="people in peoples" v-bind:key="people.id" class="row card mb-1 mp-1">
               <div class="card-body" >
                 <label for="name">Person {{people.id}}'s name.</label>
                 <input type="text" class="form-control" :id=people.id
@@ -25,7 +25,7 @@
                 <input type="email" class="form-control" :id=people.id
                 v-model="people.email" placeholder="Email address example - ' email@derp.com'">
               </div>
-              <div class="form-check card-body">
+              <div class="form-check ml-4">
                 <input
                   v-model="people.admin"
                   class="form-check-input"
@@ -37,12 +37,16 @@
               </div>
             </div>
           </div>
-          <button type="button" class="btn btn-primary"
-          v-on:click="addGroupMember">Add person</button>
-          <button type="button" class="btn btn-primary"
-          v-on:click="deleteGroupMember">delete last person</button>
-          <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
-          </fieldset>
+          <div class="d-flex justify-content-center">
+            <button type="button" class="btn btn-primary m-2"
+               v-on:click="addGroupMember">Add person</button>
+            <button type="button" class="btn btn-primary m-2"
+              v-on:click="deleteGroupMember">delete last person</button>
+          </div>
+          <router-link to="Confirm" class="nav-link d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
+          </router-link>
+        </fieldset>
       </form>
     </section>
   </div>
