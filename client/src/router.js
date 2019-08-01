@@ -5,6 +5,7 @@ import SSForm from './views/SSForm.vue';
 import EmailSignUp from './views/EmailSignUp.vue';
 import SSList from './views/SSList.vue';
 import Confirm from './views/Confirm.vue';
+import SentRes from './views/SentRes.vue';
 
 Vue.use(Router);
 
@@ -44,6 +45,11 @@ export default new Router({
           component: Confirm,
         },
       ],
+    },
+    {
+      path: 'SentRes',
+      name: 'SentRes',
+      component: SentRes,
     },
   ],
 });
