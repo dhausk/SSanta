@@ -1,9 +1,9 @@
 <template >
   <div class="container">
-    <nav class="form-nav" >
+    <nav class="form-nav">
       <router-link to="EmailSignUp" class="nav-link">Sign Up</router-link>
       <router-link to="SSList" class="nav-link">Create group</router-link>
-      <router-link to ="confirm" class="nav-link">Confirmation</router-link>
+      <router-link to ="confirm" class="nav-link">Confirm</router-link>
     </nav>
       <router-view></router-view>
   </div>
