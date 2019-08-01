@@ -1,6 +1,6 @@
 <template >
   <div>
-    <div class="progress">
+    <div class="progress mb-4">
       <div
         class="progress-bar"
         role="progressbar"
@@ -11,25 +11,26 @@
       </div>
     </div>
     <form @submit.prevent="">
-      <fieldset>
+      <fieldset class="p-md-4">
         <legend>
           Step one:
         </legend>
         <div class="form-group card">
           <div class="form-check card-body">
             <label class="form-check-label">
-              Do you want to keep your results hidden?
+              Do you want the administrator to have
+              a copy of all the gifting pairs?
             </label>
             <input
               v-model="setShowHide"
-              class="form-check-input ml-2"
+              class="form-check-input"
               type="checkbox">
           </div>
         </div>
+      </fieldset>
         <router-link to="SSList" class="nav-link d-flex justify-content-center">
           <button type="submit" class="btn btn-primary btn-block">Next Step</button>
         </router-link>
-      </fieldset>
     </form>
   </div>
 </template>
