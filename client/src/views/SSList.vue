@@ -1,6 +1,6 @@
 <template>
   <div class="mb-4">
-    <div class="progress">
+    <div class="progress mb-4">
       <div class="progress-bar"
         role="progressbar"
         style="width: 50%;"
@@ -14,7 +14,7 @@
         <fieldset>
           <legend>Step 2: Enter your Group memembers names and emails.</legend>
           <div class="form-group container align-middle">
-            <div v-for="people in peoples" v-bind:key="people.id" class="row card mb-1 mp-1">
+            <div v-for="people in peoples" v-bind:key="people.id" class="row card mb-1 p-1">
               <div class="card-body" >
                 <label for="name">Person {{people.id}}'s name.</label>
                 <input type="text" class="form-control" :id=people.id
