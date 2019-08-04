@@ -25,6 +25,11 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/About.vue'),
     },
     {
+      path: '/SentRes',
+      name: 'SentRes',
+      component: SentRes,
+    },
+    {
       path: '/SSForm',
       name: 'SSForm',
       component: SSForm,
@@ -45,11 +50,6 @@ export default new Router({
           component: Confirm,
         },
       ],
-    },
-    {
-      path: 'SentRes',
-      name: 'SentRes',
-      component: SentRes,
     },
   ],
 });
