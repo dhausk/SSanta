@@ -2,6 +2,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { getField, updateField } from 'vuex-map-fields';
+import API from './Lib/Api';
 
 Vue.use(Vuex);
 
@@ -69,6 +70,10 @@ export default new Vuex.Store({
     removeFromGroup(context) {
       context.commit('deleteGroupMember');
       context.commit('removeOneFromGroup');
+    },
+    async sendListToServer() {
+      const res = await API.sendList();
+      console.log(res);
     },
   },
 });
