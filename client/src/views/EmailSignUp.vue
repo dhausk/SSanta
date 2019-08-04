@@ -1,6 +1,6 @@
-<template >
+<template>
   <div>
-    <div class="progress mb-4">
+    <div class="progress">
       <div
         class="progress-bar"
         role="progressbar"
@@ -23,7 +23,7 @@
             </label>
             <input
               v-model="setShowHide"
-              class="form-check-input"
+              class="form-check-input ml-2"
               type="checkbox">
           </div>
         </div>
