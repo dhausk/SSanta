@@ -30,22 +30,24 @@
         <router-link to="SSList" class="nav-link d-flex justify-content-center">
           <button class="btn btn-primary">Whoops lets go back and fix it.</button>
         </router-link>
-        <router-link to="/" class="nav-link d-flex justify-content-center">
-          <button class="btn btn-success">Looks good. Send it!</button>
+        <router-link to="/SentRes" class="nav-link d-flex justify-content-center">
+          <button v-on:click="sendListToServer" class="btn btn-success">
+            Looks good. Send it!
+          </button>
         </router-link>
       </div>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 
 export default {
   name: 'Confirm',
   computed: {
     ...mapState(['peoples', 'groupSize', 'showData']),
   },
+  methods: {
+    ...mapActions(['sendListToServer']),
+  },
 };
 </script>
-
-<style scoped>
-</style>
