@@ -65,5 +65,4 @@ export default {
     ...mapMutations(['addGroupMember', 'deleteGroupMember']),
   },
 };
-
 </script>
