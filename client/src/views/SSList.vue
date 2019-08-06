@@ -18,12 +18,12 @@
               <div class="card-body" >
                 <label for="name">Person {{people.id}}'s name.</label>
                 <input type="text" class="form-control" :id=people.id
-                v-model="people.name" placeholder="Name">
+                v-model="people.name" required placeholder="Name">
               </div>
               <div class="card-body">
                 <label for="email">Email address for person {{people.id}}</label>
                 <input type="email" class="form-control" :id=people.id
-                v-model="people.email" placeholder="Email address example - ' email@derp.com'">
+                v-model="people.email" required placeholder="Email address ex: ' email@derp.com'">
               </div>
               <div class="form-check ml-4">
                 <input
