@@ -2,16 +2,37 @@ const express = require("express");
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
 const app = express();
-
-app.use(morgan('tiny'));
+const valid = require('./validation')
+app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
+app.get("/", (res) => {
   res.json({
-    message: "Merry Christmas Ya Little Jerk!"
+    message: "welcome to the SSanta Gift exchange back end. please go to SSanta.com."
+  });
+});
+
+function validForm(state) {
+  const hasVehId = typeof state.peoples == 'number';
+  return hasVehId;
+}
+
+app.post('/', (req, res, next) => {
+  if (validForm(req.body)) {
+      res.json({message: 'good job, its valid.'})
+  } else {
+    next(new Error('form not valid. please double check your form.'))
+  }
+})
+
+app.use(function (err, req, res, next) {
+  // render the error page
+  res.status(err.status || 500);
+  res.json({
+    message: err.message,
+    error: req.app.get('env') === 'development' ? err : {}
   });
 });
 
