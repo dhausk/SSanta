@@ -71,8 +71,8 @@ export default new Vuex.Store({
       context.commit('deleteGroupMember');
       context.commit('removeOneFromGroup');
     },
-    async sendListToServer() {
-      const res = await API.sendList();
+    async sendListToServer(state) {
+      const res = await API.sendList(state);
       console.log(res);
     },
   },
