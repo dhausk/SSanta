@@ -3,10 +3,11 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const valid = require('./validation')
+
 app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
+app.use(valid(req))
 
 app.get("/", (res) => {
   res.json({
@@ -14,9 +15,27 @@ app.get("/", (res) => {
   });
 });
 
-function validForm(state) {
-  const hasVehId = typeof state.peoples == 'number';
-  return hasVehId;
+function validForm(state){
+  const size = propGroupSize(state.peoples.length);
+  const showData = propShowData(state.showData);
+  const groupAdmin = propGroupAdmin(state.peoples);
+  return size && showData && groupAdmin;
+}
+function propGroupSize(size){
+  const bigEnough = size >= 3;
+  return bigEnough;
+}
+function propShowData(show){
+  return typeof show == 'Boolean';
+}
+function propGroupAdmin(peoples){
+  let admin = 0;
+  for (let i = 0; i < peoples.length; i++) {
+    if (peoples[i].admin === true) {
+      admin += 1;
+    };
+  }
+  return (admin >= 1) ? true : false;
 }
 
 app.post('/', (req, res, next) => {
