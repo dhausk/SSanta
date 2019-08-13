@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:4040/';
+const apiUrl = 'http://localhost:4040/form';
 
 export default {
   async sendList(state) {

@@ -21,10 +21,34 @@ module.exports = function (options) {
   function propGroupAdmin(peoples) {
     let admin = 0;
     for (let i = 0; i < peoples.length; i++) {
-      if (peoples[i].admin === true) {
+      if (peoples[i].admin == true) {
         admin += 1;
       };
     }
     return (admin >= 1 && admin <=10) ? true : false;
   } 
 }
+// var ob = {
+//   groupSize: 3,
+//   showData: false,
+//   peoples: [
+//       {
+//         id: 1,
+//         name: '',
+//         email: '',
+//         admin: false
+//       },
+//       {
+//         id: 2,
+//         name: '',
+//         email: '',
+//         admin: false
+//       },
+//       {
+//         id: 3,
+//         name: '',
+//         email: '',
+//         admin: false
+//       }
+//     ]
+// }

@@ -1,4 +1,4 @@
-/* eslint-disable no-param-reassign */
+/* eslint-disable  */
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { getField, updateField } from 'vuex-map-fields';
@@ -15,21 +15,21 @@ export default new Vuex.Store({
         id: 1,
         name: '',
         email: '',
-        admin: false,
+        admin: false
       },
       {
         id: 2,
         name: '',
         email: '',
-        admin: false,
+        admin: false
       },
       {
         id: 3,
         name: '',
         email: '',
-        admin: false,
-      },
-    ],
+        admin: false
+      }
+    ]
   },
   getters: {
     getField,
@@ -47,7 +47,7 @@ export default new Vuex.Store({
         id: state.peoples.length + 1,
         name: '',
         email: '',
-        admin: false,
+        admin: false
       });
     },
     addToGroupSize(state) {
@@ -72,8 +72,7 @@ export default new Vuex.Store({
       context.commit('removeOneFromGroup');
     },
     async sendListToServer(state) {
-      const res = await API.sendList(state);
-      console.log(res);
+      await API.sendList(state);
     },
   },
 });

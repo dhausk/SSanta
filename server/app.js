@@ -3,7 +3,7 @@ const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const valid = require("./validate");
+// const valid = require("./validate");
 
 app.disable('x-powered-by')
 
@@ -11,11 +11,7 @@ app.use(morgan('dev'));
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "welcome to the SSanta Gift exchange server."});
-});
-
-app.use(valid());
+// app.use(valid());
 
 app.post('/form', (req, res, next) => {
   if (req.valid) {
