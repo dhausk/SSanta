@@ -1,23 +1,17 @@
 module.exports = function (options) {
   return function (req, res, next) {
   // return req.valid = to true or false \
-    req.valid = validForm(req);   
+    req.valid = validForm(req.body);   
     next()
   }
   function validForm(state) {
     // check each part of the form to make sure it is correct. 
-    const size = propGroupSize(state.peoples.length);
-    const showData = propShowData(state.showData);
+    const size = state.groupSize >= 3;
+    const show = typeof state.showData == 'boolean';
     const groupAdmin = propGroupAdmin(state.peoples);
-    return size && showData && groupAdmin;
+    return size && show && groupAdmin;
   }
-  function propGroupSize(size) {
-    const bigEnough = size >= 3;
-    return bigEnough;
-  }
-  function propShowData(show) {
-    return typeof show == 'Boolean';
-  }
+  
   function propGroupAdmin(peoples) {
     let admin = 0;
     for (let i = 0; i < peoples.length; i++) {
