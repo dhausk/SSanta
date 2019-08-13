@@ -5,4 +5,4 @@ so that everyone has a different person.
 
 ### Technology
 
-SSanta Generator is built using Vue and VueX with MongoDB, Node.JS, Express on the back end of the project.
+SSanta Generator is built using Vue and VueX
