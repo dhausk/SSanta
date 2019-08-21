@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const valid = require("./validate");
+const list = require("./createList")
 
 app.disable('x-powered-by')
 
@@ -12,12 +13,14 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use(valid());
+app.use(list());
 
 app.post('/form', (req, res, next) => {
   if (req.valid) {
-      res.json({message: 'good job, its valid.'})
+      req.list;
+      res.json({message: 'good job it likes the list gen'})
   } else {
-    next(new Error('form not valid. please double check your form.'))
+    next(new Error('nope it didnt take.'))
   }
 })
 
