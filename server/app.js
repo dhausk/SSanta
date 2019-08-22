@@ -20,7 +20,7 @@ app.post('/form', (req, res, next) => {
       req.list;
       res.json({message: 'good job it likes the list gen'})
   } else {
-    next(new Error('nope it didnt take.'))
+    next(new Error(`nope it didn't take.`))
   }
 })
 
