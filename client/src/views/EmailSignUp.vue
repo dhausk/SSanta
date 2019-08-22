@@ -21,10 +21,31 @@
               Do you want the administrator to have
               a copy of all the gifting pairs?
             </label>
-            <input
+            <div class="input-group form-size custom-control custom-switch">
+              <input
+              type="checkbox"
+              class="custom-control-input"
+              id="customSwitch1"
               v-model="setShowHide"
-              class="form-check-input ml-2"
-              type="checkbox">
+              checked="">
+              <label class="custom-control-label" for="customSwitch1">No/Yes</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group card">
+          <div class="form-check card-body">
+            <label class="form-check-label">
+              What is the Gift amount Limit? ex. $100
+            </label>
+                <div class="input-group mb-3 form-size">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">$</span>
+                  </div>
+                  <input type="number"
+                  v-model="setGiftLimit"
+                  class="form-control"
+                  aria-label="Amount (to the nearest dollar)">
+            </div>
           </div>
         </div>
       </fieldset>
@@ -45,6 +66,14 @@ export default {
       set(value) {
         this.$store.commit('setShowData', value);
       },
+      setGiftLimit: {
+        get() {
+          return this.$store.state.giftLimit;
+        },
+        set(value) {
+          this.$store.commit('setGiftLimit', value);
+        },
+      },
     },
   },
   name: 'EmailSignUp',
@@ -52,4 +81,13 @@ export default {
 </script>
 
 <style scoped>
+.form-size {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .form-size{
+    width: 50%;
+  }
+ }
+
 </style>

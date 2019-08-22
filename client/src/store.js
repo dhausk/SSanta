@@ -10,6 +10,7 @@ export default new Vuex.Store({
   state: {
     groupSize: 3,
     showData: false,
+    giftLimit: 0,
     peoples: [
       {
         id: 1,
@@ -59,6 +60,9 @@ export default new Vuex.Store({
     // remove one group mem obj
     deleteGroupMember(state) {
       state.peoples.pop();
+    },
+    setGiftLimit(state, value) {
+      state.giftLimit = value;
     },
     updateField,
   },
