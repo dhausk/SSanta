@@ -4,7 +4,7 @@ Before the Christmas of 2018, I was looking for a Secret Santa Generator and eac
 
 ## How It Works
 SSanta Generator allows users to create a gift exchange group with options. You Start out setting the gift value limit and whether or not to allow the organizer to have a copy of the gift exchange pairs. Once you enter all the names and their emails you check it over once and SSanta sends "Santa" in the group their gift recipient.
-
+![welcome](./readmeImgs/splash.png)
 <!-- need to add Gif or Video of SSAnta -->
 
 ## Links
