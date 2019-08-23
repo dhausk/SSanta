@@ -9,6 +9,14 @@ SSanta Generator allows users to create a gift exchange group with options. You 
 
 ## Links
 <!-- need to deploy -->
+
+## To Run SSanta your self
+1. Fork, Clone or Download repo
+2. run ```npm init``` on the client side and server side.
+3. make sure to change the cors and api calls to the localhost ports before starting the server and client side.
+4. run ```npm start``` on the server side to start running the server localy
+5. run ```npm run serve``` on the client side to start runnig the front end.
+
 ## Technology
 
 SSanta Generator is built using [Vue.js](https://vuejs.org/), [VueX](https://vuex.vuejs.org/), [Vue-Router](https://router.vuejs.org/), [vue-map-fields](https://github.com/maoberlehner/vuex-map-fields) package, and using [BootSwatach](https://bootswatch.com) for styling.  On the back end we have a [Node.js](https://nodejs.org/en/) and [Express](https://expressjs.com/) server using the [nodemailer](https://nodemailer.com/about/) package to send emails to each recipient.
