@@ -8,6 +8,7 @@ SSanta Generator allows users to create a gift exchange group with options. You 
 <!-- need to add Gif or Video of SSAnta -->
 
 ## Links
+Coming Soon.
 <!-- need to deploy -->
 
 ## To Run SSanta your self
