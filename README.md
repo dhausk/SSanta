@@ -13,11 +13,11 @@ Coming Soon.
 <!-- need to deploy -->
 
 ## To Run SSanta your self
-1. Fork, Clone or Download repo
-2. run ```npm init``` on the client side and server side.
-3. make sure to change the cors and api calls to the localhost ports before starting the server and client side.
-4. run ```npm start``` on the server side to start running the server localy
-5. run ```npm run serve``` on the client side to start runnig the front end.
+1. Fork Repo then Clone or Download to your Computer.
+2. Run ```npm init``` on the client side and server side.
+3. Make sure to change the cors and api calls to the localhost ports before starting the server and client side.
+4. Run ```npm start``` on the server side to start running the server localy
+5. Run ```npm run serve``` on the client side to start runnig the front end.
 
 ## Technology
 
