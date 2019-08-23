@@ -1,7 +1,7 @@
 <template>
   <article class="container jumbotron">
     <h1>Why make another Secret Santa Generator?</h1>
-    <section class="container ">
+    <section class="container">
     <p>Before the Christmas of 2018, I was looking for a Secret Santa Generator
       and each one I found wanted me to create an account. Once you created an
       each person in your list had to sign up for a group and make an account.
