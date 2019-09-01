@@ -1,4 +1,4 @@
-# client
+# client side of SSanta Generator
 
 ## Project setup
 ```
