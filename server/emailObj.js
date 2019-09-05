@@ -1,6 +1,3 @@
-//  [{ a: "{contact ob}", b: "{contact ob}" }]
-// contact obj = {id: 1, name: '', email: '', admin: false},
-// create seperate function for adminstartor object if there is one?
 module.exports = function (options) {
   return function (req, next) {
     req.emailQue = createEmailQue(req.list, req.body.giftLimit, req.body.showData);
