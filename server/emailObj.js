@@ -1,4 +1,5 @@
 //  [{ a: "{contact ob}", b: "{contact ob}" }]
+// contact obj = {id: 1, name: '', email: '', admin: false},
 // create seperate function for adminstartor object if there is one?
 module.exports = function (options) {
   return function (req, next) {
@@ -6,9 +7,9 @@ module.exports = function (options) {
     next()
   }
   function createEmailQue(list, giftLimit, showData) {
-    let messageArr = createMessage(list, giftLimit);
-    if(showData) {
-      messageArr += createMasterListEmail(list, giftLimit)
+    let messageArr = createMessage(list, giftLimit); //returns a array of messages
+    if(showData) {//if the show data emails
+      messageArr.push(createMasterListEmail(list, giftLimit)); //returns array master list emails
     }
     return messageArr
   }
@@ -27,12 +28,27 @@ module.exports = function (options) {
   function createMasterListEmail(list, giftLimit) {
     // create master list email object
     let admin = getAdminEmail(list); //returns an array of admin emails
-    let masterList =  createMasterList(list); // return a master list as an array
+    let masterList =  createMasterList(list); // return a master list as a string
+    let masterListHTML = createMasterListHTML(list);// return a master list as a sting of html p tags
+    return admin.map((cur)=>{
+     return {
+        from: 'sender@server.com', // my email server address
+        to: `${cur}`,  // The admins email
+        subject: 'Your SSanta Gift Exchange drawing master list',
+        text: `${masterList}`,
+        html: `${masterListHTML}`
+      };
+    });
   }
   function createMasterList(list) {
-     list.map((curPair) => {
-      return 
-    })    
+     return list.reduce((acc, curPair) => {
+       return acc += `${curPair.a.name}(${curPair.a.email}) has ${curPair.b.name}. `
+    },"")    
+  }
+  function createMasterListHTML(list) {
+    return list.reduce((acc, curPair) => {
+      return acc += `<p>${curPair.a.name}(${curPair.a.email}) has ${curPair.b.name}.</p>`
+    }, "")
   }
   function getAdminEmail(list) {
     return list.filter((cur) => {
@@ -41,14 +57,3 @@ module.exports = function (options) {
     })
   }
 }
-
-
-// ! This is a sample of the req obj received
-
-//   {
-//     id: 1,
-//     name: '',
-//     email: '',
-//     admin: false
-//   },
-
