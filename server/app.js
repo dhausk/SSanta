@@ -20,6 +20,8 @@ app.post('/form', (req, res, next) => {
   if (req.valid) {
       req.list;
       req.emailObj;
+      console.log(req.list)
+    console.log(req.emailQue)
       res.json({message: 'good job it likes the list gen'})
   } else {
     next(new Error(`nope it didn't take.`))
