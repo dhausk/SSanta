@@ -31,9 +31,13 @@ module.exports = function (options) {
      return {
         from: 'sender@server.com', // my email server address
         to: `${cur}`,  // The admins email
-        subject: 'Your SSanta Gift Exchange drawing master list',
-        text: `${masterList}`,
-        html: `${masterListHTML}`
+        subject: `Your SSanta Gift Exchange drawing master list.`,
+       text: ` The gift limit is set at ${giftLimit}.
+        The list is as follows: ${masterList}`,
+        html: `
+        <h2>The gift limit is ${giftLimit}</h2>
+        <h2>The list is as follows:</h2>
+        ${masterListHTML}`
       };
     });
   }

@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node app.js",
     "dev": "nodemon app.js",
-    "test": "mocha"
+    "test": "mocha || true"
   },
   "keywords": [],
   "author": "Derek Hassick",
@@ -19,8 +19,6 @@
     "nodemailer": "^6.3.0"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "mocha": "^6.2.0",
     "nodemon": "^1.18.7"
   }
 }
