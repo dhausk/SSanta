@@ -16,7 +16,7 @@ module.exports = function (options) {
         from: 'sender@server.com', // my email server address
         to: `${curPair.a.email}`,  // The santa's email
         subject: 'SSanta Gift Exchange drawing',
-        text: `You drew ${curPair.b.name} for the Gift Exchange. The gift limit is set at${giftLimit}.`,
+        text: `You drew ${curPair.b.name} for the Gift Exchange. The gift limit is set at ${giftLimit}.`,
         html: `<p>You drew ${curPair.b.name} for the Gift Exchange.</p>
         <p>The gift limit is set at ${giftLimit}.</p>`
       };
@@ -27,19 +27,18 @@ module.exports = function (options) {
     let admin = getAdminEmail(list); //returns an array of admin emails
     let masterList =  createMasterList(list); // return a master list as a string
     let masterListHTML = createMasterListHTML(list);// return a master list as a sting of html p tags
-    return admin.map((cur)=>{
-     return {
-        from: 'sender@server.com', // my email server address
-        to: `${cur}`,  // The admins email
-        subject: `Your SSanta Gift Exchange drawing master list.`,
-       text: ` The gift limit is set at ${giftLimit}.
+    
+    return {
+      from: 'sender@server.com', // my email server address
+      to: `${admin.email}`,  // The admins email
+      subject: `Your SSanta Gift Exchange drawing master list.`,
+      text: ` The gift limit is set at ${giftLimit}.
         The list is as follows: ${masterList}`,
-        html: `
+      html: `
         <h2>The gift limit is ${giftLimit}</h2>
         <h2>The list is as follows:</h2>
         ${masterListHTML}`
-      };
-    });
+    };
   }
   function createMasterList(list) {
      return list.reduce((acc, curPair) => {
@@ -51,10 +50,13 @@ module.exports = function (options) {
       return acc += `<p>${curPair.a.name}(${curPair.a.email}) has ${curPair.b.name}.</p>`
     }, "")
   }
+  function findAdmin(pair) {
+    if (pair.a.admin == true) {
+      return pair.a;
+    }
+  }
   function getAdminEmail(list) {
-    return list.filter((cur) => {
-      cur.a.admin === true;
-      return cur.a.email;
-    })
+    var admin = list.filter(findAdmin);
+    return admin[0].a
   }
 }
