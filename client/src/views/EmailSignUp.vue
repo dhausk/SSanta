@@ -35,14 +35,15 @@
         <div class="form-group card">
           <div class="form-check card-body">
             <label class="form-check-label">
-              What is the Gift amount Limit? ex. $100
+              What is the Gift amount Limit? ex. $10
             </label>
                 <div class="input-group mb-3 form-size">
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
                   <input type="number"
-                  v-model="setGiftLimit"
+                  min="0"
+                  v-model="setGLimit"
                   class="form-control"
                   aria-label="Amount (to the nearest dollar)">
             </div>
@@ -66,18 +67,19 @@ export default {
       set(value) {
         this.$store.commit('setShowData', value);
       },
-      setGiftLimit: {
-        get() {
-          return this.$store.state.giftLimit;
-        },
-        set(value) {
-          this.$store.commit('setGiftLimit', value);
-        },
+    },
+    setGLimit: {
+      get() {
+        return this.$store.state.giftLimit;
+      },
+      set(value) {
+        this.$store.commit('setGiftLimit', value);
       },
     },
   },
   name: 'EmailSignUp',
 };
+
 </script>
 
 <style scoped>

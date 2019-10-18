@@ -30,14 +30,21 @@ export default new Vuex.Store({
         email: '',
         admin: false
       }
-    ]
+    ],
+    resMessage: ""
   },
   getters: {
     getField,
+    message (state){
+      return state.resMessage;
+    }
   },
   mutations: {
     setShowData(state, value) {
       state.showData = value;
+    }, 
+    setGiftLimit(state, value) {
+      state.giftLimit = value;
     },
     clearGroupArray(state) {
       state.peoples = [];
@@ -61,8 +68,8 @@ export default new Vuex.Store({
     deleteGroupMember(state) {
       state.peoples.pop();
     },
-    setGiftLimit(state, value) {
-      state.giftLimit = value;
+    setResMessage(state, message) {
+      state.resMessage = message;
     },
     updateField,
   },
@@ -75,8 +82,10 @@ export default new Vuex.Store({
       context.commit('deleteGroupMember');
       context.commit('removeOneFromGroup');
     },
-    async sendListToServer(state) {
-      await API.sendList(state);
+    async sendListToServer(state, context) {
+      const message = await API.sendList(state);
+      context.commit('setResMessage', message );
+
     },
   },
 });
