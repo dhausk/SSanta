@@ -12,17 +12,15 @@
     </div>
     <section>
       <h2>Your gift exchange emails have been sent.</h2>
-      <!-- need to have message response from server side showing all succesful emails and
-      form validations
-      once cleared have the state cleared and ready for the next batch. -->
+      <p></p>
     </section>
   </div>
 </template>
 <script>
 export default {
   name: 'SentRes',
-  // async mounted() {
-
-  // },
+  async mounted() {
+    this.$store.dispatch('resMessage');
+  },
 };
 </script>
