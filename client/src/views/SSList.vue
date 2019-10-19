@@ -12,7 +12,7 @@
       <section>
       <form @submit.prevent="" form-inline>
         <fieldset>
-          <legend>Step 2: Enter your Group memembers names and emails.</legend>
+          <legend>Step 2: Enter your Group memembers names and emails. Up to 25 people</legend>
           <div class="form-group container align-middle">
             <div v-for="people in peoples" v-bind:key="people.id" class="row card mb-1 p-1">
               <div class="card-body" >
@@ -52,6 +52,7 @@
   </div>
 </template>
 <script>
+
 import { mapMutations } from 'vuex';
 
 import { mapMultiRowFields } from 'vuex-map-fields';
