@@ -2,7 +2,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import { getField, updateField } from 'vuex-map-fields';
-import API from './Lib/Api';
+import router from './router';
 
 Vue.use(Vuex);
 
@@ -31,6 +31,7 @@ export default new Vuex.Store({
         admin: false
       }
     ],
+    adminError: false,
     resMessage: ""
   },
   getters: {
@@ -71,6 +72,10 @@ export default new Vuex.Store({
     setResMessage(state, message) {
       state.resMessage = message;
     },
+    setAdminError(state) {
+      state.adminError = true;
+
+    },
     updateField,
   },
   actions: {
@@ -82,10 +87,34 @@ export default new Vuex.Store({
       context.commit('deleteGroupMember');
       context.commit('removeOneFromGroup');
     },
-    async sendListToServer(state, context) {
-      const message = await API.sendList(state);
-      context.commit('setResMessage', message );
+    checkFormEmailsAndNames(context) {
+      if (this.state.showData){
+       const admin = this.state.peoples.filter(person => person.admin === true);
+        return admin.length ? router.push({ path: 'Confirm' }) : context.commit('setAdminError');
+      }
+      else {
+        router.push({path: 'Confirm'});
 
+      }
+    },
+    async sendListToServer( context) {
+      const body = {
+        groupSize: this.state.groupSize,
+        showData: this.state.showData,
+        giftLimit: this.state.giftLimit,
+        peoples: this.state.peoples
+      };
+
+      let message = 
+        await fetch('http://localhost:4040/form', {
+          method: 'POST',
+          body: JSON.stringify(body),
+         headers: { 'Content-Type': 'application/json' },
+        })
+          .then(res => res.json()) 
+            .catch(error => error.json());
+      console.log(message)
+      context.commit('setResMessage', message);
     },
   },
 });

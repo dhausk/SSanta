@@ -10,7 +10,7 @@
       </div>
     </div>
       <section>
-      <form @submit.prevent="" form-inline>
+      <form @submit.prevent="checkFormEmailsAndNames"  form-inline>
         <fieldset>
           <legend>Step 2: Enter your Group memembers names and emails. Up to 25 people</legend>
           <div class="form-group container align-middle">
@@ -43,9 +43,11 @@
             <button type="button" class="btn btn-primary m-2"
               v-on:click="deleteGroupMember">delete last person</button>
           </div>
-          <router-link to="Confirm" class="nav-link d-flex justify-content-center">
+            <div v-if="adminError" class="alert alert-danger">
+              <strong>Oh snap! </strong>
+              Please Select at least One Administrator and try submitting again.
+            </div>
             <button type="submit" class="btn btn-primary btn-lg btn-block">Next Step</button>
-          </router-link>
         </fieldset>
       </form>
     </section>
@@ -53,7 +55,7 @@
 </template>
 <script>
 
-import { mapMutations } from 'vuex';
+import { mapMutations, mapActions } from 'vuex';
 
 import { mapMultiRowFields } from 'vuex-map-fields';
 
@@ -61,9 +63,15 @@ export default {
   name: 'SSList',
   computed: {
     ...mapMultiRowFields(['peoples']),
+    adminError: {
+      get() {
+        return this.$store.state.adminError;
+      },
+    },
   },
   methods: {
     ...mapMutations(['addGroupMember', 'deleteGroupMember']),
+    ...mapActions(['checkFormEmailsAndNames']),
   },
 };
 </script>

@@ -12,15 +12,19 @@
     </div>
     <section>
       <h2>Your gift exchange emails have been sent.</h2>
-      <p></p>
+      <p>{{messageResponse}}</p>
     </section>
   </div>
 </template>
 <script>
 export default {
   name: 'SentRes',
-  async mounted() {
-    this.$store.dispatch('resMessage');
+  computed: {
+    messageResponse: {
+      get() {
+        return this.$store.state.resMessage;
+      },
+    },
   },
 };
 </script>
