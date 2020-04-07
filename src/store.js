@@ -50,7 +50,6 @@ export default new Vuex.Store({
     clearGroupArray(state) {
       state.peoples = [];
     },
-    // add one peoples member obj
     addGroupMember(state) {
       state.peoples.push({
         id: state.peoples.length + 1,
@@ -65,7 +64,6 @@ export default new Vuex.Store({
     removeOneFromGroup(state) {
       state.groupSize -= 1;
     },
-    // remove one group mem obj
     deleteGroupMember(state) {
       state.peoples.pop();
     },
@@ -74,7 +72,6 @@ export default new Vuex.Store({
     },
     setAdminError(state) {
       state.adminError = true;
-
     },
     updateField,
   },
@@ -94,7 +91,6 @@ export default new Vuex.Store({
       }
       else {
         router.push({path: 'Confirm'});
-
       }
     },
     async sendListToServer( context) {
@@ -113,8 +109,9 @@ export default new Vuex.Store({
         })
           .then(res => res.json()) 
             .catch(error => error.json());
-      console.log(message)
+      
       context.commit('setResMessage', message);
+      console.log(message);
     },
   },
 });
